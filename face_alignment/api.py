@@ -74,7 +74,7 @@ class FaceAlignment:
         face_detector_module = __import__('face_alignment.detection.' + face_detector,
                                           globals(), locals(), [face_detector], 0)
         face_detector_kwargs = face_detector_kwargs or {}
-        self.face_detector = face_detector_module.FaceDetector(device=device, verbose=verbose, **face_detector_kwargs)
+        self.face_detector = face_detector_module.FaceDetector(device=device, verbose=verbose, path_to_detector='checkpoints/s3fd-619a316812.pth', **face_detector_kwargs)
 
         # Initialise the face alignemnt networks
         if landmarks_type == LandmarksType._2D:
